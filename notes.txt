@@ -1,0 +1,16 @@
+git status
+git add .
+git commit -m 'message'
+git remote add origin link
+git checkout -b master
+git push origin master
+
+
+create folder   mkdir folder_name
+create file     touch notes.txt
+
+
+npm i express
+npm i dotenv
+npm i nodemon
+
