@@ -13,6 +13,7 @@ create file     touch notes.txt
 npm i express
 npm i dotenv
 npm i nodemon
+npm i http-status-codes
 
 
 using markdown to
