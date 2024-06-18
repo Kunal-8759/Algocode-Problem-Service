@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { PORT } = require('./config/server.config');
+const {PORT}= require('./config/server.config');
 
 const app = express();
 
@@ -13,5 +13,5 @@ app.get('/ping', (req, res) => {
 });
 
 app.listen(PORT, ()=> {
-    console.log(`server started at PORT: ${PORT}`);
+    console.log("server started at PORT: ",PORT);
 });
