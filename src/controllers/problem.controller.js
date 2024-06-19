@@ -2,9 +2,6 @@ const {StatusCodes}=require('http-status-codes');
 const NotImplemented = require('../errors/notImplemented.error');
 
 
-function problemController(req,res){
-    return res.json({message:'i am ok'});
-}
 
 function addProblem(req,res){
     try{
@@ -12,28 +9,44 @@ function addProblem(req,res){
         throw new NotImplemented('addProblem');
     }
     catch(err){
-        next(err);//calling the next middleware
+        next(err);//calling the next middleware which is errorHandler
     }
 }
 function getProblem(req,res){
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message:"not implemented"
-    });
+    try{
+        //if nothing implemented
+        throw new NotImplemented('getProblem');
+    }
+    catch(err){
+        next(err);//calling the next middleware which is errorHandler
+    }
 }
 function deleteProblem(req,res){
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message:"not implemented"
-    });
+    try{
+        //if nothing implemented
+        throw new NotImplemented('deleteProblem');
+    }
+    catch(err){
+        next(err);//calling the next middleware which is errorHandler
+    }
 }
 function getProblems(req,res){
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message:"not implemented"
-    });
+    try{
+        //if nothing implemented
+        throw new NotImplemented('getProblems');
+    }
+    catch(err){
+        next(err);//calling the next middleware which is errorHandler
+    }
 }
 function updateProblem(req,res){
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message:"not implemented"
-    });
+    try{
+        //if nothing implemented
+        throw new NotImplemented('updateProblem');
+    }
+    catch(err){
+        next(err);//calling the next middleware which is errorHandler
+    }
 }
 
 module.exports={
@@ -41,6 +54,5 @@ module.exports={
     getProblem,
     deleteProblem,
     getProblems,
-    updateProblem,
-    problemController
+    updateProblem
 }
