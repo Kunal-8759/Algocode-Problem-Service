@@ -1,4 +1,5 @@
 const {StatusCodes}=require('http-status-codes');
+const NotImplemented = require('../errors/notImplemented.error');
 
 
 function problemController(req,res){
@@ -6,9 +7,13 @@ function problemController(req,res){
 }
 
 function addProblem(req,res){
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message:"not implemented"
-    });
+    try{
+        //if nothing implemented
+        throw new NotImplemented('addProblem');
+    }
+    catch(err){
+        next(err);//calling the next middleware
+    }
 }
 function getProblem(req,res){
     return res.status(StatusCodes.NOT_IMPLEMENTED).json({
