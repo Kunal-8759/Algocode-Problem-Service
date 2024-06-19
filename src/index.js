@@ -12,17 +12,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 
+
 // If any request comes and route starts with /api, we map it to apiRouter
-app.use('/api',apiRouter);
+app.use('/api', apiRouter);
 
 
-// last middleware if any error comes 
-app.use(errorHandler);
-
-app.listen(PORT, ()=> {
-    console.log("server started at PORT: ",PORT);
+app.get('/ping', (req, res) => {
+    return res.json({message: 'Problem Service is alive'});
 });
 
+// last middleware if any error comes
+app.use(errorHandler);
 
-
-//api/v1/problems/ping
+app.listen(PORT, () => {
+    console.log(`Server started at PORT: ${PORT}`);
+    
+});

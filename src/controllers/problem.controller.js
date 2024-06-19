@@ -1,58 +1,60 @@
-const {StatusCodes}=require('http-status-codes');
+const { StatusCodes } = require('http-status-codes');
 const NotImplemented = require('../errors/notImplemented.error');
 
+function pingProblemController(req, res) {
+    return res.json({message: 'Problem controller is up'});
+}
 
-
-function addProblem(req,res){
-    try{
-        //if nothing implemented
-        throw new NotImplemented('addProblem');
-    }
-    catch(err){
-        next(err);//calling the next middleware which is errorHandler
-    }
-}
-function getProblem(req,res){
-    try{
-        //if nothing implemented
-        throw new NotImplemented('getProblem');
-    }
-    catch(err){
-        next(err);//calling the next middleware which is errorHandler
-    }
-}
-function deleteProblem(req,res){
-    try{
-        //if nothing implemented
-        throw new NotImplemented('deleteProblem');
-    }
-    catch(err){
-        next(err);//calling the next middleware which is errorHandler
-    }
-}
-function getProblems(req,res){
-    try{
-        //if nothing implemented
-        throw new NotImplemented('getProblems');
-    }
-    catch(err){
-        next(err);//calling the next middleware which is errorHandler
-    }
-}
-function updateProblem(req,res){
-    try{
-        //if nothing implemented
-        throw new NotImplemented('updateProblem');
-    }
-    catch(err){
-        next(err);//calling the next middleware which is errorHandler
+function addProblem(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch(error) {
+        next(error);
     }
 }
 
-module.exports={
+function getProblem(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch(error) {
+        next(error);
+    }
+}
+
+function getProblems(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch(error) {
+        next(error);
+    }
+}
+
+function deleteProblem(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch(error) {
+        next(error);
+    }
+}
+
+function updateProblem(req, res, next) {
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch(error) {
+        next(error);
+    }
+}
+
+module.exports = {
     addProblem,
     getProblem,
-    deleteProblem,
     getProblems,
-    updateProblem
+    deleteProblem,
+    updateProblem,
+    pingProblemController
 }
