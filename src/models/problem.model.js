@@ -16,7 +16,7 @@ const problemSchema=new mongoose.Schema({
         enum:['Easy','Medium','Hard'],
         default:'Easy'
     },
-    testCases:{
+    testCases:[{
         input:{
             type:String,
             required:true
@@ -25,14 +25,17 @@ const problemSchema=new mongoose.Schema({
             type:String,
             required:true
         }
-    },
+    }],
+        
     editorial:{
         type:String
     }
 });
 
+
+// name of the model/collection/table name:Problem by using this we can query create add data/documents into the collection problem
 const Problem=mongoose.model('Problem',problemSchema);
 //by this mongoose model object we can add query to the collectionusing orm or odm
-module.exports={
-    Problem
-}
+module.exports=Problem;
+
+
