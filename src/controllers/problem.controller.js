@@ -58,7 +58,16 @@ async function getProblems(req, res, next) {
 
 async function deleteProblem(req, res, next) {
     try {
-        const problem=await problemService.deleteProblem(req.params.id);
+        const id=req.params.id;
+        const problem=await problemService.deleteProblem(id);
+        if(!problem){
+            return res.status(StatusCodes.OK).json({
+                success: true,
+                message: `problem are not present with this id ${id}`,
+                error: {},
+                data: problem
+            })
+        }
         return res.status(StatusCodes.OK).json({
             success: true,
             message: 'Successfully deleted the problem',
