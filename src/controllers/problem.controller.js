@@ -58,8 +58,7 @@ async function getProblems(req, res, next) {
 
 function deleteProblem(req, res, next) {
     try {
-        // nothing implemented
-        throw new NotImplemented('Add Problem');
+       
     } catch(error) {
         next(error);
     }
