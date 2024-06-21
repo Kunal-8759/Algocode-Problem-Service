@@ -36,6 +36,5 @@ class ProblemService {
         return problem;
     }
 
-}
 
 module.exports = ProblemService;

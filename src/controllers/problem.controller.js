@@ -64,8 +64,8 @@ async function deleteProblem(req, res, next) {
             message: 'Successfully deleted the problem',
             error: {},
             data: problem
-        })
-    } catch(error) {
+          })
+        }catch(error) {
         next(error);
     }
 }

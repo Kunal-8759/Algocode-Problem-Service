@@ -52,7 +52,7 @@ class ProblemRepository{
             throw err;
         }
     }
-}
+
 
 module.exports=ProblemRepository;
 
