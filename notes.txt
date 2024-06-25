@@ -16,8 +16,13 @@ npm i nodemon
 npm i http-status-codes
 npm i http-errors-->for error handling
 npm i mongoose
+
+adding logger to the mongodb
 npm i winston
 npm i winston-mongodb
+
+adding logger to the azure cosmos db
+npm install @azure/cosmos
 
 
 using markdown to

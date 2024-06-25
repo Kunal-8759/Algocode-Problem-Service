@@ -2,10 +2,29 @@ const winston =require('winston');
 const { LOG_DB_URL } = require('./server.config');
 require('winston-mongodb');
 
+//for the cosmos db
+const {Writable}=require('stream');
+const logToCosmosDB=require('../clientapis/cosmos.client')
+
 const allowedTransports=[];
 
 //defining the logger on the console by using transport
 //transport is the place where you log -->console,DB,file
+
+
+//custom transport for the cosmos db
+const customStream=new Writable({
+    write(chunk , encoding,callback){
+        const message= chunk.toString();
+        logToCosmosDB("error",message);
+        callback();
+    }
+})
+
+const customStreamTransport=new winston.transports.Stream({
+    stream:customStream
+});
+allowedTransports.push(customStreamTransport);
 
 
 //below transport configuration enables logging on the console

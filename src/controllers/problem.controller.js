@@ -1,3 +1,4 @@
+const logger = require('../config/logger.config');
 const NotImplemented = require('../errors/notImplemented.error');
 const { ProblemRepository } = require('../repositories');
 const { ProblemService } = require('../services/index');
@@ -5,6 +6,7 @@ const {StatusCodes}=require('http-status-codes');
 
 
 function pingProblemController(req, res) {
+    logger.error("ping problem controller ko call kr diya hun");
     return res.json({message: 'Problem controller is up'});
 }
 
